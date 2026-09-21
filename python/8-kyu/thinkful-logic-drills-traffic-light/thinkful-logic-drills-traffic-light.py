@@ -1,0 +1,11 @@
+def update_light(current):
+    match current:
+        case 'green':
+            return 'yellow'
+        case 'yellow':
+            return 'red'
+        case 'red':
+            return 'green'
+        case _: 
+            print("Exception made")
+            return 'Error'
