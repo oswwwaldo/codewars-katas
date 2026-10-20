@@ -3,13 +3,8 @@ def unique_in_order(sequence):
     previous_item = None
     
     for item in sequence: 
-        if item not in unique:
+        if item != previous_item:
             unique.append(item)
             previous_item = item
-        elif item in unique:
-            if previous_item == item:   
-                pass
-            else:
-                unique.append(item)
-                previous_item = item
+​
     return unique
