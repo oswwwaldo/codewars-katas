@@ -1,0 +1,30 @@
+def longest_consec(strarr, k):
+    if k <= 0 or strarr == [] or k > len(strarr):
+        return ""
+    
+    words: list[str] = strarr
+    
+    longest_word: str = ""
+    
+    for index, word in enumerate(words):
+        
+        if index + 1 > len(words):
+            return longest_word
+        
+        chunk = words[index : index + k]
+        combined_word = "".join(chunk)
+        
+        if len(combined_word) > len(longest_word):
+            longest_word = combined_word
+            
+    return longest_word
+​
+# strarr: list[str] 
+​
+# we need to shift by one
+​
+# iterate through strarr
+# grab the next array and the current
+    # store the length if length is greater than the current max length
+    
+# issue is what if we reach strarr[5]? then we have to tell python to stop early afterwards
