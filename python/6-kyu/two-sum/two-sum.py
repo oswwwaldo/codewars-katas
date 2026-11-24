@@ -1,5 +1,9 @@
 def two_sum(numbers, target):
-    for index, num in enumerate(numbers):
-        for i, n in enumerate(numbers):
-            if n + num == target and index != i:
-                return index, i
+    seen = {}
+    for index, number in enumerate(numbers):
+        needed = target - number
+        
+        if needed in seen:
+            return index, seen[needed]
+        
+        seen[number] = index
