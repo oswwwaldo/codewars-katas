@@ -1,0 +1,21 @@
+def rot13(message):
+    alphabet: str = "abcdefghijklmnopqrstuvwxyz"
+    output: str = ""
+    
+    def encryptLetterWithRot13(letter: str, capital: bool):        
+        position: int = alphabet.find(letter.lower()) + 13
+        
+        while (position >= len(alphabet)):
+            position = position - len(alphabet)
+​
+        return alphabet[position] if capital is False else alphabet[position].upper()
+    
+    for index, letter in enumerate(message):
+        if letter.isalpha() and letter.isupper():
+            output += encryptLetterWithRot13(letter, capital = True)
+        elif letter.isalpha() and letter.islower():
+            output += encryptLetterWithRot13(letter, capital = False)
+        else:
+            output += letter
+    
+    return output
